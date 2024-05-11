@@ -1,28 +1,28 @@
 package adris.altoclef.tasks.misc;
 
 import adris.altoclef.AltoClef;
-import adris.altoclef.tasks.CraftInInventoryTask;
 import adris.altoclef.tasks.ResourceTask;
 import adris.altoclef.tasks.resources.MineAndCollectTask;
 import adris.altoclef.tasksystem.Task;
-import adris.altoclef.util.*;
+import adris.altoclef.util.MiningRequirement;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 
 public class GetItemTask extends ResourceTask {
     public Item item;
     public Block block;
 
     public GetItemTask(Item item, int targetCount) {
-        super(item, targetCount);
-        this.item = item;
-        this.block = Block.getBlockFromItem(item);
+        this(item, Block.getBlockFromItem(item), targetCount);
     }
 
     public GetItemTask(Block block, int targetCount) {
-        super(block.asItem(), targetCount);
-        this.item = block.asItem();
+        this(block.asItem(), block, targetCount);
+    }
+
+    public GetItemTask(Item item, Block block, int targetCount) {
+        super(item, targetCount);
+        this.item = item;
         this.block = block;
     }
 
@@ -43,9 +43,9 @@ public class GetItemTask extends ResourceTask {
 
     @Override
     protected Task onResourceTick(AltoClef mod) {
-        if (mod.getItemStorage().getItemCount(item) >= getTargetCount()) {
-            return null;
-        }
+//        if (mod.getItemStorage().getItemCount(item) >= getTargetCount()) {
+//            return this;
+//        }
 //        return new MineAndCollectTask(
 //                new ItemTarget(
 //                        new Item[]{Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD}),
@@ -55,6 +55,11 @@ public class GetItemTask extends ResourceTask {
                 itemTargets, MiningRequirement.getMinimumRequirementForBlock(block));
 //                .forceDimension(Dimension.OVERWORLD);
 //        return null;
+    }
+
+    @Override
+    public boolean isFinished(AltoClef mod) {
+        return mod.getItemStorage().getItemCount(item) >= getTargetCount();
     }
 
     @Override

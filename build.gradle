@@ -54,8 +54,27 @@ repositories {
         name = 'babbaj-repo'
         url = 'https://babbaj.github.io/maven/'
     }
-    flatDir {
-        dirs '../baritone/dist'
+//    flatDir {
+//        dirs '../baritone/dist'
+//    }
+
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+//    forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+
+    // Cloth Config (Reinforced Core deps)
+    maven {
+        name = "Cloth Config"
+        url "https://maven.shedaniel.me/"
     }
 }
 
@@ -99,6 +118,18 @@ dependencies {
     }
     //modImplementation 'baritone-api-fabric:baritone-api-fabric:1.6.3'
     //implementation files('baritone-plus/build/libs/baritone-unoptimized-fabric-1.6.3.jar')
+
+    modApi fileTree(dir: "libs")
+
+    modApi("me.shedaniel.cloth:cloth-config-fabric:11.1.118") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+
+    modApi "maven.modrinth:modmenu:7.2.2"
+
+//    implementation "org.anarres:jcpp:1.4.14" // for iris
+//    implementation 'io.github.douira:glsl-transformer:2.0.0-pre13' // for iris
+//    implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
 }
 shadowJar {
     configurations = [project.configurations.shadow]
