@@ -20,6 +20,7 @@ public class AltoClefCommands {
                 new SetGammaCommand(),
                 new TestCommand(),
                 new GamerCommand(),
+                new GetItemCommand(),
                 new MarvionCommand(),
                 new DummyTaskCommand(),
                 new ReloadSettingsCommand(),

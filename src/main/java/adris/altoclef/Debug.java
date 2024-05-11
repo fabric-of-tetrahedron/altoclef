@@ -5,12 +5,25 @@ import net.minecraft.text.Text;
 
 // TODO: Debug library or use Minecraft's built in debugger
 public class Debug {
-    public static boolean enabled = false;
+    public enum LogLevel {
+        error(4),info(3),debug(2), internal(1), none(0);
+        public int num;
+
+        LogLevel(int num) {
+            this.num = num;
+        }
+
+        public boolean enable(LogLevel logLevel) {
+            return num >= logLevel.num;
+        }
+    }
+
+    public static LogLevel level = LogLevel.none;
 
     public static AltoClef jankModInstance;
 
     public static void logInternal(String message) {
-        if(enabled) System.out.println("ALTO CLEF: " + message);
+        if (level.enable(LogLevel.internal)) System.out.println("ALTO CLEF: " + message);
     }
 
     public static void logInternal(String format, Object... args) {
@@ -25,6 +38,8 @@ public class Debug {
     }
 
     public static void logMessage(String message, boolean prefix) {
+        if (!level.enable(LogLevel.debug)) return;
+
         if (MinecraftClient.getInstance() != null && MinecraftClient.getInstance().player != null) {
             if (prefix) {
                 message = "\u00A72\u00A7l\u00A7o" + getLogPrefix() + "\u00A7r" + message;
