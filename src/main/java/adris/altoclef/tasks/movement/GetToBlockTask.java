@@ -8,6 +8,7 @@ import adris.altoclef.util.helpers.WorldHelper;
 import adris.altoclef.util.time.TimerGame;
 import baritone.api.pathing.goals.Goal;
 import baritone.api.pathing.goals.GoalBlock;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 
 public class GetToBlockTask extends CustomBaritoneGoalTask implements ITaskRequiresGrounded {
@@ -93,7 +94,7 @@ public class GetToBlockTask extends CustomBaritoneGoalTask implements ITaskRequi
 
     @Override
     protected String toDebugString() {
-        return "Getting to block " + _position + (_dimension != null ? " in dimension " + _dimension : "");
+        return I18n.translate("altoclef.task.get_to_block.debug",_position , _dimension);
     }
 
 

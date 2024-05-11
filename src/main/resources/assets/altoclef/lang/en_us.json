@@ -1,3 +1,12 @@
 {
-  "altoclef.status.chain.no_chain_running": " (no chain running) "
+  "altoclef.status.chain.no_chain_running": " (no chain running) ",
+  "altoclef.status.chain.chain_priority": "Chain: %s, priority: %s",
+  "altoclef.task.beat_minecraft.debug": "Beating the game (Miran version).",
+  "altoclef.task.do_stuff_in_container.debug": "Doing stuff in %s container",
+  "altoclef.task.default_go_to_dimension.debug": "Going to dimension: %s (default version)",
+  "altoclef.task.collect_blaze_rods.debug": "Collect blaze rods - %s/%s",
+  "altoclef.task.get_close_to_block.debug": "Approaching %s",
+  "altoclef.task.get_to_block.debug": "Getting to block %s in dimension %s",
+
+  "altoclef.empty": ""
 }

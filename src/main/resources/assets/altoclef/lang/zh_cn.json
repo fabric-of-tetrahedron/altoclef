@@ -1,3 +1,12 @@
 {
-  "altoclef.status.chain.no_chain_running": "（无运行链条）"
+  "altoclef.status.chain.no_chain_running": "（无运行链条）",
+  "altoclef.status.chain.chain_priority": "链条: %s, 优先级: %s",
+  "altoclef.task.beat_minecraft.debug": "通关游戏（Miran版）",
+  "altoclef.task.do_stuff_in_container.debug": "操作 %s 容器",
+  "altoclef.task.default_go_to_dimension.debug": "移动到维度：%s（默认版本）",
+  "altoclef.task.collect_blaze_rods.debug": "收集烈焰棒 - %s/%s",
+  "altoclef.task.get_close_to_block.debug": "接近 %s",
+  "altoclef.task.get_to_block.debug": "移动到方块 %s，在维度 %s",
+
+  "altoclef.empty": ""
 }

@@ -13,6 +13,7 @@ import adris.altoclef.tasksystem.Task;
 import adris.altoclef.util.Dimension;
 import adris.altoclef.util.helpers.WorldHelper;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.item.Items;
@@ -153,7 +154,7 @@ public class CollectBlazeRodsTask extends ResourceTask {
 
     @Override
     protected String toDebugStringName() {
-        return "Collect blaze rods - "+AltoClef.INSTANCE.getItemStorage().getItemCount(Items.BLAZE_ROD)+"/"+_count;
+        return I18n.translate("altoclef.task.collect_blaze_rods.debug",AltoClef.INSTANCE.getItemStorage().getItemCount(Items.BLAZE_ROD),_count);
     }
 
     @Override

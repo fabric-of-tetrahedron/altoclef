@@ -34,26 +34,12 @@ public class GetItemTask extends ResourceTask {
     @Override
     protected void onResourceStart(AltoClef mod) {
         mod.getBehaviour().push();
-//        mod.getBehaviour().avoidBlockBreaking(blockPos -> {
-//            BlockState s = mod.getWorld().getBlockState(blockPos);
-//            return s.getBlock() == Blocks.BUDDING_AMETHYST;
-//        });
     }
 
     @Override
     protected Task onResourceTick(AltoClef mod) {
-//        if (mod.getItemStorage().getItemCount(item) >= getTargetCount()) {
-//            return this;
-//        }
-//        return new MineAndCollectTask(
-//                new ItemTarget(
-//                        new Item[]{Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD}),
-//                new Block[]{Blocks.AMETHYST_BLOCK, Blocks.AMETHYST_CLUSTER}, MiningRequirement.WOOD)
-//                .forceDimension(Dimension.OVERWORLD);
         return new MineAndCollectTask(
                 itemTargets, MiningRequirement.getMinimumRequirementForBlock(block));
-//                .forceDimension(Dimension.OVERWORLD);
-//        return null;
     }
 
     @Override
@@ -73,7 +59,7 @@ public class GetItemTask extends ResourceTask {
 
     @Override
     protected String toDebugStringName() {
-        return "Collecting " + getTargetCount() + " " + itemTargets[0].getCatalogueName();
+        return "Collecting " + getTargetCount() + " " + item.getName();
     }
 
     private int getTargetCount() {

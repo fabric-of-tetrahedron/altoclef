@@ -15,6 +15,7 @@ import adris.altoclef.util.helpers.WorldHelper;
 import adris.altoclef.util.slots.Slot;
 import adris.altoclef.util.time.TimerGame;
 import net.minecraft.block.Block;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -185,7 +186,7 @@ public abstract class DoStuffInContainerTask extends Task {
 
     @Override
     protected String toDebugString() {
-        return "Doing stuff in " + containerTarget + " container";
+        return I18n.translate("altoclef.task.do_stuff_in_container.debug",containerTarget);
     }
 
     protected abstract boolean isSubTaskEqual(DoStuffInContainerTask other);

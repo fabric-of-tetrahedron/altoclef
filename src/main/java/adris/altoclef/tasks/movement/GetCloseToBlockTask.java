@@ -2,6 +2,7 @@ package adris.altoclef.tasks.movement;
 
 import adris.altoclef.AltoClef;
 import adris.altoclef.tasksystem.Task;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 
 /**
@@ -61,7 +62,7 @@ public class GetCloseToBlockTask extends Task {
 
     @Override
     protected String toDebugString() {
-        return "Approaching " + _toApproach.toShortString();
+        return I18n.translate("altoclef.task.get_close_to_block.debug", _toApproach.toShortString());
     }
 
 

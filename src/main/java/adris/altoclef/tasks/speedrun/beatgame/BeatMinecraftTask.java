@@ -39,6 +39,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.client.gui.screen.CreditsScreen;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.mob.*;
@@ -1052,7 +1053,7 @@ public class BeatMinecraftTask extends Task {
      */
     @Override
     protected String toDebugString() {
-        return "Beating the game (Miran version).";
+        return I18n.translate("altoclef.task.beat_minecraft.debug");
     }
 
     /**

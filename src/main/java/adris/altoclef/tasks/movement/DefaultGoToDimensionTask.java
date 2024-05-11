@@ -7,6 +7,7 @@ import adris.altoclef.tasksystem.Task;
 import adris.altoclef.util.Dimension;
 import adris.altoclef.util.helpers.WorldHelper;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Optional;
@@ -84,7 +85,7 @@ public class DefaultGoToDimensionTask extends Task {
 
     @Override
     protected String toDebugString() {
-        return "Going to dimension: " + _target + " (default version)";
+        return I18n.translate("altoclef.task.default_go_to_dimension.debug",_target);
     }
 
     @Override

@@ -2,6 +2,7 @@ package adris.altoclef.tasksystem;
 
 import adris.altoclef.AltoClef;
 import adris.altoclef.Debug;
+import net.minecraft.client.resource.language.I18n;
 
 import java.util.ArrayList;
 
@@ -44,7 +45,7 @@ public class TaskRunner {
         }
         cachedCurrentTaskChain = maxChain;
         if (maxChain != null) {
-            statusReport = "Chain: " + maxChain.getName() + ", priority: " + maxPriority;
+            statusReport = I18n.translate("altoclef.status.chain.chain_priority", maxChain.getName(), maxPriority);
             maxChain.tick(mod);
         } else {
             statusReport = no_chain_running.get();
