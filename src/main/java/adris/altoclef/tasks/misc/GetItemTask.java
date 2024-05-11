@@ -33,7 +33,6 @@ public class GetItemTask extends ResourceTask {
 
     @Override
     protected void onResourceStart(AltoClef mod) {
-        // Bot will not break Budding Amethyst
         mod.getBehaviour().push();
 //        mod.getBehaviour().avoidBlockBreaking(blockPos -> {
 //            BlockState s = mod.getWorld().getBlockState(blockPos);

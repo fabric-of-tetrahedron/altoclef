@@ -5,6 +5,8 @@ import adris.altoclef.Debug;
 
 import java.util.ArrayList;
 
+import static adris.altoclef.ui.LocalizationAltoClef.no_chain_running;
+
 public class TaskRunner {
 
     private final ArrayList<TaskChain> chains = new ArrayList<>();
@@ -13,7 +15,7 @@ public class TaskRunner {
 
     private TaskChain cachedCurrentTaskChain = null;
 
-    public String statusReport = " (no chain running) ";
+    public String statusReport = no_chain_running.get();
 
     public TaskRunner(AltoClef mod) {
         this.mod = mod;
@@ -22,7 +24,7 @@ public class TaskRunner {
 
     public void tick() {
         if (!active || !AltoClef.inGame()) {
-            statusReport = " (no chain running) ";
+            statusReport = no_chain_running.get();
             return;
         }
 
@@ -42,10 +44,10 @@ public class TaskRunner {
         }
         cachedCurrentTaskChain = maxChain;
         if (maxChain != null) {
-            statusReport = "Chain: "+maxChain.getName() + ", priority: "+maxPriority;
+            statusReport = "Chain: " + maxChain.getName() + ", priority: " + maxPriority;
             maxChain.tick(mod);
         } else {
-            statusReport = " (no chain running) ";
+            statusReport = no_chain_running.get();
         }
     }
 

@@ -78,6 +78,28 @@ repositories {
     }
 }
 
+//sourceSets {
+//    server {
+//        java.srcDirs(
+//            "src/server/java",
+//        )
+//        resources.srcDirs(
+//            "src/server/resources/",
+//        )
+//    }
+//}
+
+//loom {
+//    splitEnvironmentSourceSets()
+//
+//    mods {
+//        "altoclef" {
+//            sourceSet sourceSets.server
+//            sourceSet sourceSets.main
+//        }
+//    }
+//}
+
 dependencies {
     //to change the versions see the gradle.properties file
     minecraft("com.mojang:minecraft:${project.name}")

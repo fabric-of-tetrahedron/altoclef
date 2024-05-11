@@ -21,7 +21,7 @@ public class GetItemCommand extends Command {
         super("get", "Get specific item by breaking blocks",
                 new Arg(String.class, "item", "stone", 0),
                 new Arg(String.class, "block", "stone", 1),
-                new Arg(Integer.class, "count", "2", 2));
+                new Arg(Integer.class, "count", 2, 2));
     }
 
     @Override
@@ -36,14 +36,14 @@ public class GetItemCommand extends Command {
         Block block = getBlock(mod, blockStr);
         if (block == null) return;
 
-        String targetCount;
+        Integer targetCount;
         //TODO parser.get with class type is unstable
         try {
-            targetCount = parser.get(String.class);
+            targetCount = parser.get(Integer.class).intValue();
         } catch (ClassCastException e) {
-            targetCount = parser.get(Integer.class).toString();
+            targetCount = Integer.valueOf(parser.get(String.class));
         }
-        mod.runUserTask(new GetItemTask(item, block, Integer.parseInt(targetCount)), this::finish);
+        mod.runUserTask(new GetItemTask(item, block, targetCount), this::finish);
     }
 
     public static @Nullable Block getBlock(AltoClef mod, String blockStr) {

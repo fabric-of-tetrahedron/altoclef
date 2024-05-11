@@ -8,11 +8,12 @@
     "TacoTechnica",
     "James Green",
     "Marvion Kirito",
-    "MiranCZ"
+    "MiranCZ",
+    "pama1234"
   ],
   "contact": {
-    "homepage": "https://github.com/MiranCZ/altoclef",
-    "sources": "https://github.com/MiranCZ/altoclef"
+    "homepage": "https://github.com/fabric-of-tetrahedron/altoclef",
+    "sources": "https://github.com/fabric-of-tetrahedron/altoclef"
   },
   "license": "MIT",
   "icon": "assets/altoclef/icon.png",
