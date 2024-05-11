@@ -5,11 +5,12 @@ import net.minecraft.text.Text;
 
 // TODO: Debug library or use Minecraft's built in debugger
 public class Debug {
+    public static boolean enabled = false;
 
     public static AltoClef jankModInstance;
 
     public static void logInternal(String message) {
-        System.out.println("ALTO CLEF: " + message);
+        if(enabled) System.out.println("ALTO CLEF: " + message);
     }
 
     public static void logInternal(String format, Object... args) {
