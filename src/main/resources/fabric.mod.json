@@ -21,6 +21,9 @@
   "entrypoints": {
     "main": [
       "adris.altoclef.AltoClef"
+    ],
+    "modmenu": [
+      "adris.altoclef.gui.ConfigScreen"
     ]
   },
   "mixins": [

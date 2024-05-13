@@ -45,6 +45,8 @@ import java.util.function.Consumer;
  */
 public class AltoClef implements ModInitializer {
 
+    public static final String ID="altoclef";
+
     // Static access to altoclef
     private static final Queue<Consumer<AltoClef>> _postInitQueue = new ArrayDeque<>();
 
