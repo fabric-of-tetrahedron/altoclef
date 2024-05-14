@@ -33,7 +33,7 @@ public class CodeRegistrationScreen extends Screen {
 
     @Override
     protected void init() {
-        textArea = new NotesTextField(this.textRenderer, 20, 20, width - 40, height - 40, 5);
+        textArea = new NotesTextField(this.textRenderer, 20, 20, width - 40, height - 60, 5);
         addDrawableChild(textArea);
         addDrawableChild(ButtonWidget.builder(Text.of("Compile"), b -> {
             try {
@@ -41,15 +41,15 @@ public class CodeRegistrationScreen extends Screen {
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-        }).dimensions(20, height - 20, 60, 20).build());
+        }).dimensions(20, height - 40, 60, 20).build());
         addDrawableChild(ButtonWidget.builder(Text.of("Execute main function"), b -> {
             if (aClass != null) {
                 try {
-                    aClass.getDeclaredMethod("main", String[].class).invoke(null, new String[]{});
+                    aClass.getDeclaredMethod("main", String[].class).invoke(null, (Object) new String[]{});
                 } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
                     throw new RuntimeException(e);
                 }
             }
-        }).dimensions(100, height - 20, 120, 20).build());
+        }).dimensions(100, height - 40, 120, 20).build());
     }
 }

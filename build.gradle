@@ -154,7 +154,7 @@ dependencies {
 //    implementation 'io.github.douira:glsl-transformer:2.0.0-pre13' // for iris
 //    implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
 
-//    api 'com.github.fabric-of-tetrahedron:Java-Runtime-Compiler:515bd86d03'
+    api 'com.github.fabric-of-tetrahedron:Java-Runtime-Compiler:1eb3c5f7bf'
     api 'com.github.beanshell:beanshell:2.1.1'
     api 'org.eclipse.jdt:org.eclipse.jdt.core:3.37.0'
 }
