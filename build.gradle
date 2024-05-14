@@ -155,6 +155,7 @@ dependencies {
 //    implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
 
     api 'com.github.fabric-of-tetrahedron:Java-Runtime-Compiler:075eaf6393'
+    api 'com.github.beanshell:beanshell:2.1.1'
 }
 shadowJar {
     configurations = [project.configurations.shadow]

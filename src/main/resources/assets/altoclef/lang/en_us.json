@@ -7,6 +7,7 @@
   "altoclef.task.collect_blaze_rods.debug": "Collect blaze rods - %s/%s",
   "altoclef.task.get_close_to_block.debug": "Approaching %s",
   "altoclef.task.get_to_block.debug": "Getting to block %s in dimension %s",
+  "altoclef.task.kill_enderman.debug": "Hunting endermen for pearls - %s/%s",
 
   "altoclef.empty": ""
 }

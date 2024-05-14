@@ -17,11 +17,11 @@ This fork aims to optimize `MarvionBeatMinecraftTask` (I will just refer to it a
 
 You can look at the [changelog](changelog.md) if you are interested.
 
-Because I rewrote a good portion of the `BeatMinecraftTask` a lot of the config settings don't work. Although I plan to implement configs in the future of course.  
+Because I rewrote a good portion of the `BeatMinecraftTask` a lot of the config settings don't work. Although I plan to implement configs in the future of course.
 
-## About this fork (pama1234)
+## 关于这个分支（pama1234）
 
-This branch will add the ability to generate Java code through LLM and inject it into the game at runtime to complete more tasks, similar to <https://github.com/MineDojo/Voyager> However, it is entirely written in Java and (by hacking into the game) it can achieve tasks that are difficult for AI directly playing the game.
+这个分支项目将会添加“通过llm生成java代码并在运行时注入到游戏中来完成更多的任务的功能“，类似于<https://github.com/MineDojo/Voyager>，但是完全由java编写，并且通过机器人脚本实现AI直接操作游戏较难达到的效果
 
 ### The preprocessor
 I am currently experimentaly using the [replay mod preprocessor](https://github.com/ReplayMod/preprocessor) to keep the mod updated across multiple versions at the same time.

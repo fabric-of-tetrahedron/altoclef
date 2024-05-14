@@ -7,6 +7,7 @@
   "altoclef.task.collect_blaze_rods.debug": "收集烈焰棒 - %s/%s",
   "altoclef.task.get_close_to_block.debug": "接近 %s",
   "altoclef.task.get_to_block.debug": "移动到方块 %s，在维度 %s",
+  "altoclef.task.kill_enderman.debug": "为了珍珠猎杀末影人 - %s/%s",
 
   "altoclef.empty": ""
 }

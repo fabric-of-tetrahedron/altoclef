@@ -12,6 +12,7 @@ import adris.altoclef.util.ItemTarget;
 import adris.altoclef.util.helpers.WorldHelper;
 import adris.altoclef.util.time.TimerGame;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.item.Items;
@@ -97,6 +98,6 @@ public class KillEndermanTask extends ResourceTask {
 
     @Override
     protected String toDebugStringName() {
-        return "Hunting endermen for pearls - " + AltoClef.INSTANCE.getItemStorage().getItemCount(Items.ENDER_PEARL) + "/" + _count;
+        return I18n.translate("altoclef.task.kill_enderman.debug", AltoClef.INSTANCE.getItemStorage().getItemCount(Items.ENDER_PEARL), _count);
     }
 }
