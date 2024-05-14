@@ -47,6 +47,8 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
+import net.openhft.compiler.CompilerUtils;
+import org.eclipse.jdt.internal.compiler.tool.EclipseCompiler;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.*;
@@ -63,6 +65,8 @@ public class AltoClef implements ModInitializer {
 
     // Static access to altoclef
     private static final Queue<Consumer<AltoClef>> _postInitQueue = new ArrayDeque<>();
+
+    public static final EclipseCompiler eclipseCompiler = new EclipseCompiler();
 
     private static KeyBinding keyOpenCodeRegistration;
 
@@ -111,6 +115,8 @@ public class AltoClef implements ModInitializer {
 
     @Override
     public void onInitialize() {
+
+        CompilerUtils.compilerSupplier = () -> eclipseCompiler;
 
         configHolder = AutoConfig.register(ConfigGlobal.class, GsonConfigSerializer::new);
         configHolder.registerSaveListener((configHolder, configGlobal) -> {
