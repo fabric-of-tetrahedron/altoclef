@@ -21,5 +21,6 @@ preprocess {
     val mc12001 = createNode("1.20.1", 12001, "yarn")
 
 //    mc12004.link(mc12002)
-    mc12004.link(mc12001)
+    mc12001.link(mc12004)
+//    mc12004.link(mc12001)
 }
