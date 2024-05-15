@@ -141,8 +141,9 @@ dependencies {
     //modImplementation 'baritone-api-fabric:baritone-api-fabric:1.6.3'
     //implementation files('baritone-plus/build/libs/baritone-unoptimized-fabric-1.6.3.jar')
 
-    api fileTree(dir: "libs")
-    modApi fileTree(dir: "modlibs")
+    api rootProject.fileTree(dir: "libs")
+    modImplementation rootProject.fileTree(dir: "modlibs")
+    include rootProject.fileTree(dir: "modlibs")
 
     modApi("me.shedaniel.cloth:cloth-config-fabric:11.1.118") {
         exclude(group: "net.fabricmc.fabric-api")
@@ -156,8 +157,9 @@ dependencies {
         implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
     }
 
-    api fileTree(dir: "libs-$mcVersion")
-    modApi fileTree(dir: "modlibs-$mcVersion")
+    api fileTree(dir: "libs")
+    modApi fileTree(dir: "modlibs")
+    include fileTree(dir: "modlibs")
 
     api 'com.github.fabric-of-tetrahedron:Java-Runtime-Compiler:1eb3c5f7bf'
     api 'com.github.beanshell:beanshell:2.1.1'
