@@ -1,4 +1,7 @@
 # AltoClef
+
+[中文](doc/README.zh_cn.md) | [English Version](README.md)
+
 *Plays block game.*
 
 *Powered by Baritone.*
@@ -41,11 +44,11 @@ or this [Video explanation](https://youtu.be/q5OmcinQ2ck?t=387)
 **Note:** After installing, please move/delete your old baritone configurations if you have any. Preexisting baritone
 configurations will interfere with altoclef and introduce bugs. This will be fixed in the future.
 
-[Check releases](https://github.com/MiranCZ/altoclef/releases)
+[Check releases](https://github.com/fabric-of-tetrahedron/altoclef/releases)
 
 ### Versions
 
-This is a **fabric only** mod, currently only available only for **Minecraft 1.20.2**.
+This is a **fabric only** mod, currently only available only for Minecraft **1.20.1**(And **1.20.1**).
 
 ## [Usage Guide](usage.md)
 

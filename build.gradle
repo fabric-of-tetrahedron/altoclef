@@ -150,9 +150,14 @@ dependencies {
 
     modApi "maven.modrinth:modmenu:7.2.2"
 
-//    implementation "org.anarres:jcpp:1.4.14" // for iris
-//    implementation 'io.github.douira:glsl-transformer:2.0.0-pre13' // for iris
-//    implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
+    if (mcVersion == 12001) {
+        implementation "org.anarres:jcpp:1.4.14" // for iris
+        implementation 'io.github.douira:glsl-transformer:2.0.0-pre13' // for iris
+        implementation 'org.antlr:antlr4-runtime:4.11.1' // for iris
+    }
+
+    api fileTree(dir: "libs-$mcVersion")
+    modApi fileTree(dir: "modlibs-$mcVersion")
 
     api 'com.github.fabric-of-tetrahedron:Java-Runtime-Compiler:1eb3c5f7bf'
     api 'com.github.beanshell:beanshell:2.1.1'
