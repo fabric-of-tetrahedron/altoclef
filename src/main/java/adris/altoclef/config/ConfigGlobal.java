@@ -21,6 +21,6 @@ public class ConfigGlobal implements ConfigData {
         instance.onConfigChanged();
     }
 
-    public  void onConfigChanged() {
+    public void onConfigChanged() {
     }
 }
