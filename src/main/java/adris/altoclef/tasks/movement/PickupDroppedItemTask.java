@@ -49,7 +49,7 @@ public class PickupDroppedItemTask extends AbstractDoToClosestObjectTask<ItemEnt
             Blocks.BIG_DRIPLEAF_STEM,
             Blocks.SMALL_DRIPLEAF,
             Blocks.TALL_GRASS,
-            Blocks.SHORT_GRASS
+            Blocks.GRASS
     };
     private Task _unstuckTask = null;
     // Am starting to regret not making this a singleton

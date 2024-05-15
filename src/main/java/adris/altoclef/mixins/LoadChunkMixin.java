@@ -49,7 +49,7 @@ public class LoadChunkMixin {
             method = "unload",
             at = @At("TAIL")
     )
-    private void onChunkUnload(ChunkPos pos, CallbackInfo ci) {
-        EventBus.publish(new ChunkUnloadEvent(pos));
+    private void onChunkUnload(int chunkX, int chunkZ, CallbackInfo ci) {
+        EventBus.publish(new ChunkUnloadEvent(new ChunkPos(chunkX, chunkZ)));
     }
 }

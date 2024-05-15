@@ -16,7 +16,7 @@ import adris.altoclef.util.slots.Slot;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.RecipeEntry;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.slot.SlotActionType;
 
 import java.util.Optional;
@@ -135,7 +135,7 @@ public class CraftGenericWithRecipeBooksTask extends Task implements ITaskUsesCr
             }
         }
 
-        Optional<RecipeEntry<?>> recipeToSend = JankCraftingRecipeMapping.getMinecraftMappedRecipe(target.getRecipe(), target.getOutputItem());
+        Optional<Recipe<?>> recipeToSend = JankCraftingRecipeMapping.getMinecraftMappedRecipe(target.getRecipe(), target.getOutputItem());
         if (recipeToSend.isPresent()) {
             if (mod.getSlotHandler().canDoSlotAction()) {
                 ClientPlayerEntity player = MinecraftClient.getInstance().player;

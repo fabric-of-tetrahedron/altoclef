@@ -5,7 +5,7 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeEntry;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeManager;
 
 import java.util.*;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  * For crafting table/inventory recipe book crafting, we need to figure out identifiers given a recipe.
  */
 public class JankCraftingRecipeMapping {
-    private static final HashMap<Item, List<RecipeEntry<?>>> recipeMapping = new HashMap<>();
+    private static final HashMap<Item, List<Recipe<?>>> recipeMapping = new HashMap<>();
 
     /**
      * Reloads the recipe mapping.
@@ -30,9 +30,9 @@ public class JankCraftingRecipeMapping {
 
             // Check if the recipe manager is available
             if (recipes != null) {
-                for (RecipeEntry<?> recipe : recipes.values()) {
+                for (Recipe<?> recipe : recipes.values()) {
                     assert world != null;
-                    Item output = recipe.value().getResult(world.getRegistryManager()).getItem();
+                    Item output = recipe.getOutput(world.getRegistryManager()).getItem();
                     recipeMapping.computeIfAbsent(output, k -> new ArrayList<>()).add(recipe);
                 }
             }
@@ -46,20 +46,20 @@ public class JankCraftingRecipeMapping {
      * @param output The output item of the recipe.
      * @return An Optional containing the mapped recipe entry if found, or an empty Optional if not found.
      */
-    public static Optional<RecipeEntry<?>> getMinecraftMappedRecipe(CraftingRecipe recipe, Item output) {
+    public static Optional<Recipe<?>> getMinecraftMappedRecipe(CraftingRecipe recipe, Item output) {
         reloadRecipeMapping();
         // Check if the output item is present in the recipe mapping
         if (recipeMapping.containsKey(output)) {
             // Iterate through all the recipes mapped to the output item
-            for (RecipeEntry<?> checkRecipe : recipeMapping.get(output)) {
+            for (Recipe<?> checkRecipe : recipeMapping.get(output)) {
                 // Create a list of item targets to satisfy
                 List<ItemTarget> toSatisfy = Arrays.stream(recipe.getSlots())
                         .filter(itemTarget -> itemTarget != null && !itemTarget.isEmpty())
                         .collect(Collectors.toList());
                 // Check if the recipe has ingredients
-                if (!checkRecipe.value().getIngredients().isEmpty()) {
+                if (!checkRecipe.getIngredients().isEmpty()) {
                     // Iterate through the ingredients of the recipe
-                    for (Ingredient ingredient : checkRecipe.value().getIngredients()) {
+                    for (Ingredient ingredient : checkRecipe.getIngredients()) {
                         // Skip empty ingredients
                         if (ingredient.isEmpty()) {
                             continue;

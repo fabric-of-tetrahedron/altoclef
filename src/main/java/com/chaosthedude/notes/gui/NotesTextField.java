@@ -162,7 +162,7 @@ public class NotesTextField extends ClickableWidget implements Drawable, Element
 	   }
 
 	@Override
-	public void renderWidget(DrawContext context, int mouseX, int mouseY, float partialTicks) {
+	public void renderButton(DrawContext context, int mouseX, int mouseY, float partialTicks) {
 		final int color = (int) (255.0F * 0.55f);
 		context.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(), color / 2 << 24);
 
@@ -220,7 +220,7 @@ public class NotesTextField extends ClickableWidget implements Drawable, Element
 	}
 
 	@Override
-	public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
+	public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount) {
 		if (horizontalAmount < 0) {
 			incrementVisibleLines();
 			return true;
