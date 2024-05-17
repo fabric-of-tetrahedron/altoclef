@@ -73,7 +73,8 @@ public class CodeRegistrationScreen extends Screen {
                 }
                 aClass = CompilerUtils.CACHED_COMPILER.loadFromJava(packageName + "." + className, text);
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+//                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }).dimensions(20, height - 30, 60, 20).build());
         addDrawableChild(ButtonWidget.builder(Text.of("Execute main function"), b -> {
